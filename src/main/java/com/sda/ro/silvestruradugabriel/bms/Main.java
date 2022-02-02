@@ -2,6 +2,7 @@ package com.sda.ro.silvestruradugabriel.bms;
 
 import com.sda.ro.silvestruradugabriel.bms.model.Author;
 import com.sda.ro.silvestruradugabriel.bms.model.Book;
+import com.sda.ro.silvestruradugabriel.bms.model.Review;
 import com.sda.ro.silvestruradugabriel.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,6 +25,12 @@ public class Main {
         book.setIsbn("123323-bms");
         book.setDescription("Povesti pentru copii");
         session.save(book);
+
+        Review review = new Review();
+        review.setBook(book);
+        review.setComment("Nice book");
+        review.setScore(10);
+        session.save(review);
 
         session.close();
 

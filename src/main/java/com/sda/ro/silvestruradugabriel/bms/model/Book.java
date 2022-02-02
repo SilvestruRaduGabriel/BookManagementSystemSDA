@@ -1,6 +1,7 @@
 package com.sda.ro.silvestruradugabriel.bms.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "book")
@@ -19,6 +20,9 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
+
+    @OneToMany(mappedBy = "book")
+    private List<Review> reviews;
 
 
 
