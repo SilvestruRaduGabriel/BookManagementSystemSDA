@@ -26,14 +26,14 @@ Reviews:
 	Tasks:
 BMS (Booking Management System)
 Author:
-- BMS-1 Create Author
+- BMS-1 Create Author = Done
 - BMS-2 View all the Authors
 - BMS-3 Update Author
 - BMS-4 Delete Author
 
 Book:
 
-- BMS-5 Create Book (adding a new book & asign an existing author)
+- BMS-5 Create Book (adding a new book & assign an existing author) = Done
 - BMS-6 View all the Books
 - BMS-7 Update Book
 - BMS-8 Delete Book
@@ -42,3 +42,4 @@ Reviews:
 - BMS-9 View reviews
 - BMS-10 Adding new review (for one of the existing book)
 
+- BMS-11 Create Book with Author (adding a new book & asign an existing author)
