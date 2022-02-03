@@ -1,5 +1,7 @@
 package com.sda.ro.silvestruradugabriel.bms;
 
+import com.sda.ro.silvestruradugabriel.bms.controller.AuthorController;
+import com.sda.ro.silvestruradugabriel.bms.controller.AuthorControllerImpl;
 import com.sda.ro.silvestruradugabriel.bms.controller.BookController;
 import com.sda.ro.silvestruradugabriel.bms.controller.BookControllerImpl;
 import com.sda.ro.silvestruradugabriel.bms.utils.SessionManager;
@@ -11,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         BookController bookController = new BookControllerImpl();
+        AuthorController authorController = new AuthorControllerImpl();
         System.out.println("BookManagementSystem is starting");
         String option = null;
         do {
@@ -20,6 +23,9 @@ public class Main {
             switch (option) {
                 case "1":
                     bookController.createBook();
+                    break;
+                case "2":
+                    authorController.createAuthor();
                     break;
                 case "Exit":
                     System.out.println("Bye bye");
@@ -37,6 +43,7 @@ public class Main {
     private static void printMenu() {
         System.out.println("Menu :");
         System.out.println("1 -> Create book:");
+        System.out.println("2 -> Create author:");
         System.out.println("Exit -> Close the application");
     }
 }
