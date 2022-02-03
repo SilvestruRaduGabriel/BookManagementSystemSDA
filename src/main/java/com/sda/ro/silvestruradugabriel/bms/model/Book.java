@@ -21,9 +21,9 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
+    //    @OneToMany(mappedBy = "book" , fetch = FetchType.EAGER) // Asa nu
     @OneToMany(mappedBy = "book")
     private List<Review> reviews;
-
 
 
     public Book(String isbn, String title, String description) {
@@ -75,6 +75,13 @@ public class Book {
         this.author = author;
     }
 
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 
     @Override
     public String toString() {
