@@ -42,4 +42,4 @@ Reviews:
 - BMS-9 View reviews
 - BMS-10 Adding new review (for one of the existing book)
 
-- BMS-11 Create Book with Author (adding a new book & asign an existing author)
+- BMS-11 Create Book with Author (adding a new book & asign an existing author) = Done

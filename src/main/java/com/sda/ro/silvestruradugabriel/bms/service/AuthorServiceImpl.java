@@ -4,6 +4,8 @@ import com.sda.ro.silvestruradugabriel.bms.model.Author;
 import com.sda.ro.silvestruradugabriel.bms.repository.AuthorRepository;
 import com.sda.ro.silvestruradugabriel.bms.repository.AuthorRepositoryImpl;
 
+import java.util.List;
+
 public class AuthorServiceImpl implements AuthorService {
 
     private AuthorRepository authorRepository; // am facut field ul asta sa putem folosi metoda createAuthor.
@@ -20,5 +22,11 @@ public class AuthorServiceImpl implements AuthorService {
 
         //Il trimite mai departe la Repository ( uita-te ca sa intelegi )
         authorRepository.createAuthor(author);
+    }
+
+    @Override
+    public List<Author> findAll() {
+        List<Author> authorList =authorRepository.findAll();
+        return authorList;
     }
 }

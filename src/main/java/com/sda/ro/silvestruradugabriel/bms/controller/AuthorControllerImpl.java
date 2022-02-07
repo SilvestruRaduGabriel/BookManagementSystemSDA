@@ -1,8 +1,10 @@
 package com.sda.ro.silvestruradugabriel.bms.controller;
 
+import com.sda.ro.silvestruradugabriel.bms.model.Author;
 import com.sda.ro.silvestruradugabriel.bms.service.AuthorService;
 import com.sda.ro.silvestruradugabriel.bms.service.AuthorServiceImpl;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class AuthorControllerImpl implements AuthorController {
@@ -24,5 +26,17 @@ public class AuthorControllerImpl implements AuthorController {
 
         //autorul creeat il trimtiem la serivce ( uita-te in AuthorService sa intelegi)
         authorService.createAuthor(firstName, lastName);
+    }
+
+    @Override
+    public void viewAllAuthors() {
+        System.out.println("List of Authors");
+        List<Author> authors = authorService.findAll();
+        for (Author author : authors) {
+            System.out.println("First name: " + author.getFirstName());
+            System.out.println("Last name: " + author.getLastName());
+            System.out.println("Author id: " + author.getId() );
+
+        }
     }
 }
