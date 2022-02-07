@@ -4,4 +4,6 @@ public interface BookController {
 
     void createBook();
 
+    void createBookWithAuthor();
+
 }

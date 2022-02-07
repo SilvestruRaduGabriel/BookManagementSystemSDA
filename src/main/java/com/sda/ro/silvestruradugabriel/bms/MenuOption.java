@@ -4,6 +4,7 @@ public enum MenuOption { // un enum extinde clasa enum deja e ca si cum as scrie
     CREATE_BOOK("1", "Create Book"),
     CREATE_AUTHOR("2", "Create Author"),
     CREATE_REVIEW("3", "Create Review"),
+    CREATE_BOOK_WITH_AUTHOR("4", "Create book with existing Author"),
     EXIT("Exit", "Close the application"),
     UNDEFINED("" , "Option not found!");
 
