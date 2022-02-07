@@ -5,6 +5,7 @@ import com.sda.ro.silvestruradugabriel.bms.controller.AuthorControllerImpl;
 import com.sda.ro.silvestruradugabriel.bms.controller.BookController;
 import com.sda.ro.silvestruradugabriel.bms.controller.BookControllerImpl;
 import com.sda.ro.silvestruradugabriel.bms.utils.SessionManager;
+import org.hibernate.Session;
 
 import java.util.Scanner;
 
@@ -12,6 +13,7 @@ public class Main {
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
+        SessionManager.getSessionFactory(); // asa facem sa apara initializarea la inceput.
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
         System.out.println("BookManagementSystem is starting");
@@ -49,6 +51,7 @@ public class Main {
         } while (option == null || !option.equals("Exit"));
         SessionManager.shutDown();
     }
+
 
     private static void printMenu() {
         System.out.println("Menu :");
