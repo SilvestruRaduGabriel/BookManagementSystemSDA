@@ -20,30 +20,46 @@ public class Main {
             printMenu();
             System.out.println("Please insert your option: ");
             option = SCANNER.nextLine();
-            switch (option) {
-                case "1":
+            MenuOption menuOption = findByOption(option);
+//            if (menuOption == null) {
+//                System.out.println("Option is not valid");
+//            } else {      E mult mai ok cu UNDEFINED.
+            switch (menuOption) {
+                case CREATE_BOOK:
                     bookController.createBook();
                     break;
-                case "2":
+                case CREATE_AUTHOR:
                     authorController.createAuthor();
                     break;
-                case "Exit":
+                case EXIT:
                     System.out.println("Bye bye");
                     break;
                 default:
                     System.out.println("Option is not valid!");
 
+
             }
+//            }
         } while (option == null || !option.equals("Exit"));
-
-
         SessionManager.shutDown();
     }
 
     private static void printMenu() {
         System.out.println("Menu :");
-        System.out.println("1 -> Create book:");
-        System.out.println("2 -> Create author:");
-        System.out.println("Exit -> Close the application");
+//        MenuOption menuOption = MenuOption.CREATE_BOOK; E una dintre metode pentru a asigna un ENUM.
+        for (MenuOption menuOption : MenuOption.values()) {
+            if (!menuOption.equals(MenuOption.UNDEFINED)) {
+                System.out.println(menuOption.getOption() + " -> " + menuOption.getDescription());
+            }
+        }
+    }
+
+    public static MenuOption findByOption(String option) {
+        for (MenuOption menuOption : MenuOption.values()) {
+            if (menuOption.getOption().equals(option)) {
+                return menuOption;
+            }
+        }
+        return MenuOption.UNDEFINED;
     }
 }

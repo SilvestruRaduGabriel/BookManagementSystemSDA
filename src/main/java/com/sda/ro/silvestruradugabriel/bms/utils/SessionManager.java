@@ -9,6 +9,7 @@ import org.hibernate.cfg.Configuration;
 public class SessionManager extends AbstractSessionManager {
 
     private static final SessionManager INSTANCE = new SessionManager();
+
     private SessionManager() {
     }
 

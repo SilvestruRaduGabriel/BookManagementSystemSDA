@@ -4,6 +4,6 @@ import com.sda.ro.silvestruradugabriel.bms.model.Author;
 
 public interface BookService {
 
-    void createBook(String Isbn, String title, String description);
+    void createBook(String isbn, String title, String description);
 
 }

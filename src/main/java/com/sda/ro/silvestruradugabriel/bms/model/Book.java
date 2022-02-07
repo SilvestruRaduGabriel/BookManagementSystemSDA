@@ -18,7 +18,7 @@ public class Book {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id") // din baza de date
     private Author author;
 
     //    @OneToMany(mappedBy = "book" , fetch = FetchType.EAGER) // Asa nu
