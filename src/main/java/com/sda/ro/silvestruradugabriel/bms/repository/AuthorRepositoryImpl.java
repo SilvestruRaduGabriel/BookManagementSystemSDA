@@ -3,41 +3,25 @@ package com.sda.ro.silvestruradugabriel.bms.repository;
 import com.sda.ro.silvestruradugabriel.bms.model.Author;
 import com.sda.ro.silvestruradugabriel.bms.utils.SessionManager;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class AuthorRepositoryImpl implements AuthorRepository {
-    @Override
-    public void createAuthor(Author author) {
-        Session session = SessionManager.getSessionFactory().openSession();
+public class AuthorRepositoryImpl extends BaseRepositoryImpl<Author, Integer> implements AuthorRepository {
 
-        Transaction transaction = null;
-        try {
-            transaction = session.beginTransaction(); // Incepe tranzactia pe baza de date
-            session.save(author); // aici e querry-ul care il vom trimite la baza de date adica authorul creeat in controller si service
-            transaction.commit();
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            if (transaction != null) {
-                transaction.rollback();
-            }
-        }
-        session.close();
+
+    public AuthorRepositoryImpl() {
+        super(Author.class);
     }
 
     @Override
-    public Author findById(Integer id) {
-        Session session = SessionManager.getSessionFactory().openSession();
-        Author author = session.find(Author.class, id);
-        session.close();
-        return author;
+    public void createAuthor(Author author) {
+        createEntity(author);
     }
 
     @Override
     public List<Author> findAll() {
         Session session = SessionManager.getSessionFactory().openSession();
-       List<Author> authors = session.createQuery("from Author" , Author.class).list();
+        List<Author> authors = session.createQuery("from Author", Author.class).list();
         session.close();
         return authors;
     }

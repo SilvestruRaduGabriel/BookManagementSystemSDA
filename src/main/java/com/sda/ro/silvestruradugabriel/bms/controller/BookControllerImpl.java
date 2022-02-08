@@ -44,6 +44,5 @@ public class BookControllerImpl implements BookController {
         } catch (AuthorNotFoundException e) {
             System.out.println("Author with Id " + e.getAuthorId() + " not found!");
         }
-
     }
 }
