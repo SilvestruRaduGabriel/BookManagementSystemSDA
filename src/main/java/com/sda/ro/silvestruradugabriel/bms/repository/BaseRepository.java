@@ -6,4 +6,6 @@ public interface BaseRepository<T, ID> {
     T findById(ID id);
 
     void update(T entity);
+
+    void delete(T id);
 }

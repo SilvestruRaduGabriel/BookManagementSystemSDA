@@ -38,6 +38,7 @@ public class BaseRepositoryImpl<T, ID> implements BaseRepository<T, ID> {
         session.close();
         return entity;
     }
+
     @Override
     public void update(T entity) {
         Session session = SessionManager.getSessionFactory().openSession();
@@ -45,6 +46,23 @@ public class BaseRepositoryImpl<T, ID> implements BaseRepository<T, ID> {
         try {
             transaction = session.beginTransaction();
             session.update(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+        session.close();
+    }
+
+    @Override
+    public void delete(T id) {
+        Session session = SessionManager.getSessionFactory().openSession();
+        Transaction transaction = null; // este folosit pentru ?
+        try {
+            transaction = session.beginTransaction();
+            session.delete(id);
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();

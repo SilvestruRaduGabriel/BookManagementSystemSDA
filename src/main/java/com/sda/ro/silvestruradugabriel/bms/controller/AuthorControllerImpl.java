@@ -57,4 +57,17 @@ public class AuthorControllerImpl implements AuthorController {
             System.out.println("Author not found!");
         }
     }
+
+    @Override
+    public void deleteAuthor() {
+        System.out.println("Delete author:");
+        System.out.println("Please insert the id for author to be deleted");
+        Integer id = Integer.parseInt(SCANNER.nextLine());
+
+        try {
+            authorService.delete(id);
+        } catch (AuthorNotFoundException e) {
+            System.out.println("Author id not found!");
+        }
+    }
 }

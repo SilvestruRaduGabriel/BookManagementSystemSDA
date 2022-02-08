@@ -28,7 +28,7 @@ BMS (Booking Management System)
 Author:
 - BMS-1 Create Author = Done
 - BMS-2 View all the Authors = Done
-- BMS-3 Update Author
+- BMS-3 Update Author = Done
 - BMS-4 Delete Author
 
 Book:
