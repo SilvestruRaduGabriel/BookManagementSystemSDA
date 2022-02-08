@@ -1,5 +1,6 @@
 package com.sda.ro.silvestruradugabriel.bms.repository;
 
+import com.sda.ro.silvestruradugabriel.bms.model.Book;
 import com.sda.ro.silvestruradugabriel.bms.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -37,5 +38,20 @@ public class BaseRepositoryImpl<T, ID> implements BaseRepository<T, ID> {
         session.close();
         return entity;
     }
-
+    @Override
+    public void update(T entity) {
+        Session session = SessionManager.getSessionFactory().openSession();
+        Transaction transaction = null; // este folosit pentru ?
+        try {
+            transaction = session.beginTransaction();
+            session.update(entity);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+        session.close();
+    }
 }

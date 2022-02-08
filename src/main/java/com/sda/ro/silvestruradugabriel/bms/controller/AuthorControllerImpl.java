@@ -3,6 +3,7 @@ package com.sda.ro.silvestruradugabriel.bms.controller;
 import com.sda.ro.silvestruradugabriel.bms.model.Author;
 import com.sda.ro.silvestruradugabriel.bms.service.AuthorService;
 import com.sda.ro.silvestruradugabriel.bms.service.AuthorServiceImpl;
+import com.sda.ro.silvestruradugabriel.bms.service.exceptions.AuthorNotFoundException;
 
 import java.util.List;
 import java.util.Scanner;
@@ -35,8 +36,25 @@ public class AuthorControllerImpl implements AuthorController {
         for (Author author : authors) {
             System.out.println("First name: " + author.getFirstName());
             System.out.println("Last name: " + author.getLastName());
-            System.out.println("Author id: " + author.getId() );
+            System.out.println("Author id: " + author.getId());
 
+        }
+    }
+
+    @Override
+    public void updateAuthor() {
+
+        System.out.println("Update Author:");
+        System.out.println("Please insert the id for author to be updated");
+        Integer id =Integer.parseInt(SCANNER.nextLine());
+        System.out.println("Please insert first name:");
+        String firstName = SCANNER.nextLine();
+        System.out.println("Please insert last name:");
+        String lastName = SCANNER.nextLine();
+        try {
+            authorService.update(id, firstName, lastName);
+        } catch (AuthorNotFoundException e) {
+            System.out.println("Author not found!");
         }
     }
 }

@@ -1,8 +1,10 @@
 package com.sda.ro.silvestruradugabriel.bms.repository;
 
 import com.sda.ro.silvestruradugabriel.bms.model.Author;
+import com.sda.ro.silvestruradugabriel.bms.model.Book;
 import com.sda.ro.silvestruradugabriel.bms.utils.SessionManager;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 

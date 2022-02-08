@@ -3,6 +3,7 @@ package com.sda.ro.silvestruradugabriel.bms.service;
 import com.sda.ro.silvestruradugabriel.bms.model.Author;
 import com.sda.ro.silvestruradugabriel.bms.repository.AuthorRepository;
 import com.sda.ro.silvestruradugabriel.bms.repository.AuthorRepositoryImpl;
+import com.sda.ro.silvestruradugabriel.bms.service.exceptions.AuthorNotFoundException;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -63,6 +64,18 @@ public class AuthorServiceImpl implements AuthorService {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void update(Integer id, String firstName, String lastName) throws AuthorNotFoundException {
+        Author author = authorRepository.findById(id);
+        if (author != null) {
+            author.setFirstName(firstName);
+            author.setLastName(lastName);
+            authorRepository.update(author); // cand vreau sa fac ceva in baza de date folosesc authorRepository.
+        } else {
+            throw new AuthorNotFoundException("Author not found!", author.getId());
         }
     }
 }

@@ -50,6 +50,9 @@ public class Main {
                 case VIEW_ALL_AUTHOR:
                     authorController.viewAllAuthors();
                     break;
+                case UPDATE_AUTHOR:
+                    authorController.updateAuthor();
+                    break;
                 case EXIT:
                     System.out.println("Bye bye");
                     break;

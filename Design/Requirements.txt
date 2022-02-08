@@ -44,4 +44,4 @@ Reviews:
 
 - BMS-11 Create Book with Author (adding a new book & assign an existing author) = Done
 
-- BMS-12 Import Books with Authors from text file.
+- BMS-12 Import Books with Authors from text file. = Done
