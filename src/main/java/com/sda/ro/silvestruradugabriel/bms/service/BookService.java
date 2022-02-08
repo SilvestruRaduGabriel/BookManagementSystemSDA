@@ -9,5 +9,5 @@ public interface BookService {
 
     void createBook(String isbn, String title, String description, Integer authorId) throws AuthorNotFoundException;
 
-
+    void importBooksFromFile();
 }

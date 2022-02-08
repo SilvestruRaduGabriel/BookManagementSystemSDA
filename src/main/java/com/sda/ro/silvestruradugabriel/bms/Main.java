@@ -4,6 +4,10 @@ import com.sda.ro.silvestruradugabriel.bms.controller.AuthorController;
 import com.sda.ro.silvestruradugabriel.bms.controller.AuthorControllerImpl;
 import com.sda.ro.silvestruradugabriel.bms.controller.BookController;
 import com.sda.ro.silvestruradugabriel.bms.controller.BookControllerImpl;
+import com.sda.ro.silvestruradugabriel.bms.service.AuthorService;
+import com.sda.ro.silvestruradugabriel.bms.service.AuthorServiceImpl;
+import com.sda.ro.silvestruradugabriel.bms.service.BookService;
+import com.sda.ro.silvestruradugabriel.bms.service.BookServiceImpl;
 import com.sda.ro.silvestruradugabriel.bms.utils.SessionManager;
 import org.hibernate.Session;
 
@@ -14,6 +18,13 @@ public class Main {
 
     public static void main(String[] args) {
         SessionManager.getSessionFactory(); // asa facem sa apara initializarea la inceput.
+
+//        AuthorService authorService = new AuthorServiceImpl();
+//        authorService.importAuthorsFromFile();
+
+//        BookService bookService = new BookServiceImpl();
+//        bookService.importBooksFromFile();
+
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
         System.out.println("BookManagementSystem is starting");

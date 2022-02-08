@@ -8,6 +8,12 @@ import com.sda.ro.silvestruradugabriel.bms.repository.AuthorRepositoryImpl;
 import com.sda.ro.silvestruradugabriel.bms.repository.BookRepository;
 import com.sda.ro.silvestruradugabriel.bms.repository.BookRepositoryImpl;
 
+import javax.sound.sampled.Line;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class BookServiceImpl implements BookService {
 
     private BookRepository bookRepository; // cand declar folosesc tot timpul interfata
@@ -39,8 +45,29 @@ public class BookServiceImpl implements BookService {
             book.setDescription(description);
             book.setAuthor(author);
             bookRepository.createBook(book);
-        }else {
-            throw new AuthorNotFoundException("Author not found!" , authorId);
+        } else {
+            throw new AuthorNotFoundException("Author not found!", authorId);
+        }
+    }
+
+    @Override
+    public void importBooksFromFile() {
+        Path bookFileAbsolutePath = Paths.get("C:\\Users\\gabir\\OneDrive\\Documents\\BookManagementSystemSDA\\data\\books.txt");
+        try {
+            Files.lines(bookFileAbsolutePath)
+                    .filter(line -> line != null)
+                    .filter(line -> !line.isEmpty())
+                    .skip(1)
+                    .forEach(line -> {
+                        try {
+                            String[] elements = line.split("\\|");
+                            createBook(elements[0], elements[1], elements[2], Integer.parseInt(elements[3]));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
