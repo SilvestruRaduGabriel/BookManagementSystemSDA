@@ -29,7 +29,7 @@ Author:
 - BMS-1 Create Author = Done
 - BMS-2 View all the Authors = Done
 - BMS-3 Update Author = Done
-- BMS-4 Delete Author
+- BMS-4 Delete Author = Done
 
 Book:
 
@@ -40,7 +40,7 @@ Book:
 
 Reviews:
 - BMS-9 View reviews for Book
-- BMS-10 Adding new review (for one of the existing book)
+- BMS-10 Adding new review (for one of the existing book) = Done
 
 - BMS-11 Create Book with Author (adding a new book & assign an existing author) = Done
 

@@ -8,6 +8,7 @@ public enum MenuOption { // un enum extinde clasa enum deja e ca si cum as scrie
     VIEW_ALL_AUTHOR("5", "View all authors"),
     UPDATE_AUTHOR("6", "Update author"),
     DELETE_AUTHOR("7", "Delete author"),
+    ADD_REVIEW("8", "Add review"),
     EXIT("Exit", "Close the application"),
     UNDEFINED("" , "Option not found!");
 

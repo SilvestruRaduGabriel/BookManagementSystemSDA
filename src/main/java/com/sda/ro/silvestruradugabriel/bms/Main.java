@@ -1,9 +1,6 @@
 package com.sda.ro.silvestruradugabriel.bms;
 
-import com.sda.ro.silvestruradugabriel.bms.controller.AuthorController;
-import com.sda.ro.silvestruradugabriel.bms.controller.AuthorControllerImpl;
-import com.sda.ro.silvestruradugabriel.bms.controller.BookController;
-import com.sda.ro.silvestruradugabriel.bms.controller.BookControllerImpl;
+import com.sda.ro.silvestruradugabriel.bms.controller.*;
 import com.sda.ro.silvestruradugabriel.bms.service.AuthorService;
 import com.sda.ro.silvestruradugabriel.bms.service.AuthorServiceImpl;
 import com.sda.ro.silvestruradugabriel.bms.service.BookService;
@@ -27,6 +24,7 @@ public class Main {
 
         BookController bookController = new BookControllerImpl();
         AuthorController authorController = new AuthorControllerImpl();
+        ReviewController reviewController = new ReviewControllerImpl();
         System.out.println("BookManagementSystem is starting");
         String option = null;
         do {
@@ -38,14 +36,8 @@ public class Main {
 //                System.out.println("Option is not valid");
 //            } else {      E mult mai ok cu UNDEFINED.
             switch (menuOption) {
-                case CREATE_BOOK:
-                    bookController.createBook();
-                    break;
                 case CREATE_AUTHOR:
                     authorController.createAuthor();
-                    break;
-                case CREATE_BOOK_WITH_AUTHOR:
-                    bookController.createBookWithAuthor();
                     break;
                 case VIEW_ALL_AUTHOR:
                     authorController.viewAllAuthors();
@@ -56,6 +48,19 @@ public class Main {
                 case DELETE_AUTHOR:
                     authorController.deleteAuthor();
                     break;
+
+                case CREATE_BOOK:
+                    bookController.createBook();
+                    break;
+                case CREATE_BOOK_WITH_AUTHOR:
+                    bookController.createBookWithAuthor();
+                    break;
+
+                case ADD_REVIEW:
+                    reviewController.addReview();
+                    break;
+
+
                 case EXIT:
                     System.out.println("Bye bye");
                     break;
