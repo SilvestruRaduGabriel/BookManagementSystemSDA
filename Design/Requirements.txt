@@ -6,22 +6,38 @@ One window for Reviews (book, score, comment): allows the viewing of all the rev
 
 	Analiza cerintelor: 
 
-Author:
+    Author:
 - Create Author
 - View all the Authors
 - Update Author
 - Delete Author
 
-Book:
+    Book:
 
 -Create Book (adding a new book & asign an existing author)
 -View all the Books
 -Update Book
 -Delete Book
 
-Reviews:
+    Reviews:
 -View reviews
 -Adding new review (for one of the existing book)
+
+    User:
+-Create user
+-Create user with department(s) // one or many
+-View user with departments
+-Update user
+-Delete user
+-List all users
+
+    Department:
+-Create department
+-View list of departments
+-Update department
+-Delete department
+-View all users from a department
+
 
 	Tasks:
 BMS (Booking Management System)
@@ -31,17 +47,39 @@ Author:
 - BMS-3 Update Author = Done
 - BMS-4 Delete Author = Done
 
-Book:
+    Book:
 
 - BMS-5 Create Book (adding a new book & assign an existing author) = Done
 - BMS-6 View all the Books // homework
 - BMS-7 Update Book // homework
 - BMS-8 Delete Book // homework
 
-Reviews:
+    Reviews:
 - BMS-9 View reviews for Book
 - BMS-10 Adding new review (for one of the existing book) = Done
 
 - BMS-11 Create Book with Author (adding a new book & assign an existing author) = Done
 
 - BMS-12 Import Books with Authors from text file. = Done
+
+- BMS-13 Validate review score ( Between 1 and 10) // homework
+
+    HOMEWORK
+
+    User:
+- BMS 14 Create user
+- BMS 15 Create user with department(s) // one or many
+- BMS 16 View user with departments
+- BMS 17 Update user
+- BMS 18 Delete user
+- BMS 19 List all users
+
+    Department:
+- BMS 20 Create department
+- BMS 21 View list of departments
+- BMS 22 Update department
+- BMS 23 Delete department
+- BMS 24 View all users from a department
+
+
+

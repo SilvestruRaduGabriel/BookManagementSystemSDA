@@ -21,7 +21,7 @@ public class Book {
     @JoinColumn(name = "author_id") // din baza de date
     private Author author;
 
-    //    @OneToMany(mappedBy = "book" , fetch = FetchType.EAGER) // Asa nu
+//        @OneToMany(mappedBy = "book" , fetch = FetchType.EAGER) // Asa nu
     @OneToMany(mappedBy = "book")
     private List<Review> reviews;
 

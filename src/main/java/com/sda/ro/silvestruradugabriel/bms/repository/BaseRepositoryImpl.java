@@ -72,4 +72,5 @@ public class BaseRepositoryImpl<T, ID> implements BaseRepository<T, ID> {
         }
         session.close();
     }
+
 }
