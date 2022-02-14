@@ -55,7 +55,7 @@ Author:
 - BMS-8 Delete Book // homework
 
     Reviews:
-- BMS-9 View reviews for Book
+- BMS-9 View reviews for Book = Done
 - BMS-10 Adding new review (for one of the existing book) = Done
 
 - BMS-11 Create Book with Author (adding a new book & assign an existing author) = Done
@@ -81,5 +81,16 @@ Author:
 - BMS 23 Delete department
 - BMS 24 View all users from a department
 
+    User :
+String userName
+Integer id
+String phoneNumber
+List<Department> departments .
 
+    Department:
+Integer id
+String name
+List<User> users.
+
+ManyToMany.
 

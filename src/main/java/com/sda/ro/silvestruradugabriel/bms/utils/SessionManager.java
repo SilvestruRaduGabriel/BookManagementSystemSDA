@@ -1,8 +1,6 @@
 package com.sda.ro.silvestruradugabriel.bms.utils;
 
-import com.sda.ro.silvestruradugabriel.bms.model.Author;
-import com.sda.ro.silvestruradugabriel.bms.model.Book;
-import com.sda.ro.silvestruradugabriel.bms.model.Review;
+import com.sda.ro.silvestruradugabriel.bms.model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -26,5 +24,7 @@ public class SessionManager extends AbstractSessionManager {
         configuration.addAnnotatedClass(Author.class);
         configuration.addAnnotatedClass(Book.class);
         configuration.addAnnotatedClass(Review.class);
+        configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Department.class);
     }
 }
