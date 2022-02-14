@@ -56,7 +56,6 @@ public class Main {
                 case CREATE_BOOK_WITH_AUTHOR:
                     bookController.createBookWithAuthor();
                     break;
-
                 case ADD_REVIEW:
                     reviewController.addReview();
                     break;
@@ -65,6 +64,12 @@ public class Main {
                     break;
                 case CREATE_USER:
                     userController.createUser();
+                    break;
+                case VIEW_ALL_USERS:
+                    userController.findAll();
+                    break;
+                case DELETE_USER:
+                    userController.deleteUser();
                     break;
                 case EXIT:
                     System.out.println("Bye bye");

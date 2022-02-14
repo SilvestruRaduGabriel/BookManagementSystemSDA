@@ -67,12 +67,12 @@ Author:
     HOMEWORK
 
     User:
-- BMS 14 Create user
+- BMS 14 Create user = Done
 - BMS 15 Create user with department(s) // one or many
 - BMS 16 View user with departments
 - BMS 17 Update user
-- BMS 18 Delete user
-- BMS 19 List all users
+- BMS 18 Delete user = Done
+- BMS 19 List all users = Done
 
     Department:
 - BMS 20 Create department
