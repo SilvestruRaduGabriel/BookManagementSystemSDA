@@ -11,4 +11,6 @@ public interface UserService {
     List<User> findAll();
 
     void deleteUser(Integer id) throws UserNotFoundException;
+
+    void updateUser(Integer id, String userName, String phoneNumber) throws UserNotFoundException;
 }

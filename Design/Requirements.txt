@@ -70,7 +70,7 @@ Author:
 - BMS 14 Create user = Done
 - BMS 15 Create user with department(s) // one or many
 - BMS 16 View user with departments
-- BMS 17 Update user
+- BMS 17 Update user = Done
 - BMS 18 Delete user = Done
 - BMS 19 List all users = Done
 

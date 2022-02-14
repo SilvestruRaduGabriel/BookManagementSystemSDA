@@ -39,4 +39,17 @@ public class UserServiceImpl implements UserService {
             throw new UserNotFoundException("User not found!");
         }
     }
+
+    @Override
+    public void updateUser(Integer id, String userName, String phoneNumber) throws UserNotFoundException {
+        User user =userRepository.findById(id);
+        if (user != null) {
+            user.setId(id);
+            user.setUserName(userName);
+            user.setPhoneNumber(phoneNumber);
+            userRepository.update(user);
+        }else {
+            throw new UserNotFoundException("User not found!");
+        }
+    }
 }

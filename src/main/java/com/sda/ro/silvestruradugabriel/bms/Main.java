@@ -49,7 +49,6 @@ public class Main {
                 case DELETE_AUTHOR:
                     authorController.deleteAuthor();
                     break;
-
                 case CREATE_BOOK:
                     bookController.createBook();
                     break;
@@ -70,6 +69,9 @@ public class Main {
                     break;
                 case DELETE_USER:
                     userController.deleteUser();
+                    break;
+                case UPDATE_USER:
+                    userController.updateUser();
                     break;
                 case EXIT:
                     System.out.println("Bye bye");

@@ -10,4 +10,6 @@ public interface UserController {
     void findAll();
 
     void deleteUser();
+
+    void updateUser();
 }

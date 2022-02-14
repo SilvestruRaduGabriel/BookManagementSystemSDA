@@ -49,4 +49,20 @@ public class UserControllerImpl implements UserController {
             System.out.println("User not found!");
         }
     }
+
+    @Override
+    public void updateUser() {
+        System.out.println("Please insert the user id that have to be updated: ");
+        Integer id = Integer.parseInt(SCANNER.nextLine());
+        System.out.println("Please insert the user name: ");
+        String userName = SCANNER.nextLine();
+        System.out.println("Please insert the phone number");
+        String phoneNumber = SCANNER.nextLine();
+
+        try {
+            userService.updateUser(id, userName, phoneNumber);
+        } catch (UserNotFoundException e) {
+            System.out.println("User not found!");
+        }
+    }
 }
