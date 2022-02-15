@@ -76,9 +76,9 @@ Author:
 
     Department:
 - BMS 20 Create department = Done
-- BMS 21 View list of departments
-- BMS 22 Update department
-- BMS 23 Delete department
+- BMS 21 View list of departments = Done
+- BMS 22 Update department = Done
+- BMS 23 Delete department = Done
 - BMS 24 View all users from a department
 
     User :

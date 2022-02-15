@@ -77,13 +77,20 @@ public class Main {
                 case CREATE_DEPARTMENT:
                     departmentController.createUser();
                     break;
+                case VIEW_DEPARTMENT:
+                    departmentController.findAll();
+                    break;
+                case UPDATE_DEPARTMENT:
+                    departmentController.updateDepartment();
+                    break;
+                case DELETE_DEPARTMENT:
+                    departmentController.deleteDepartment();
+                    break;
                 case EXIT:
                     System.out.println("Bye bye");
                     break;
                 default:
                     System.out.println("Option is not valid!");
-
-
             }
 //            }
         } while (option == null || !option.equals("Exit"));
