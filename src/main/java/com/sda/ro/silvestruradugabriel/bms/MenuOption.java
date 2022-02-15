@@ -14,6 +14,7 @@ public enum MenuOption { // un enum extinde clasa enum deja e ca si cum as scrie
     VIEW_ALL_USERS("11", "View all users"),
     DELETE_USER("12", "Delete user"),
     UPDATE_USER("13", "Update user"),
+    CREATE_DEPARTMENT("14", "Create user"),
     EXIT("Exit", "Close the application"),
     UNDEFINED("" , "Option not found!");
 

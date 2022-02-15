@@ -26,6 +26,7 @@ public class Main {
         AuthorController authorController = new AuthorControllerImpl();
         ReviewController reviewController = new ReviewControllerImpl();
         UserController userController = new UserControllerImpl();
+        DepartmentController departmentController = new DepartmentControllerImpl();
         System.out.println("BookManagementSystem is starting");
         String option = null;
         do {
@@ -72,6 +73,9 @@ public class Main {
                     break;
                 case UPDATE_USER:
                     userController.updateUser();
+                    break;
+                case CREATE_DEPARTMENT:
+                    departmentController.createUser();
                     break;
                 case EXIT:
                     System.out.println("Bye bye");
